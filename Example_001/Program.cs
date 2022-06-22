@@ -13,21 +13,25 @@ double meetDistance = Convert.ToDouble(Console.ReadLine());
 int count = 0;
 int friend = 2;
 double meetTime = 0;
-while (distance < meetDistance)
+while (distance > meetDistance)
 {
     if (friend == 1)
     {
         meetTime = distance / (firstFriendSpeed + dogSpeed);
         friend = 2;
+        //Console.WriteLine(meetTime);
     }
     else
     {
         meetTime = distance / (secondFriendSpeed + dogSpeed);
         friend = 1;
+        //Console.WriteLine(meetTime);
     }
     distance = distance - (firstFriendSpeed + secondFriendSpeed) * meetTime;
-    count = count + 1;
+    //Console.WriteLine(distance);
+    //count = count + 1;
+    count++;
 }
-Console.Write("Собака пробежит {count} раз");
-// Console.Write(count);
-// Console.WriteLine(" раз.");
+Console.Write("Собака пробежит ");
+Console.Write(count);
+Console.WriteLine(" раз(а).");
